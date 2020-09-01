@@ -20,6 +20,7 @@ _main.js_ initializes by waiting for the dom to load and LaunchDarkly to return 
 Note: LaunchDarkly is passed the unique ID of the page visitor which either exists or is created as the variable `UserId` in localStorage.
 
 **Develop**
+
 Dependencies: `npm install browserify && npm install --save launchdarkly-js-client-sdk`
 
 Build: `browserify main.js -o bundle.js`
