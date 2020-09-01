@@ -1,2 +1,22 @@
 # ld-sehomework-featureflag
-First Homework problem for Launch Darkly Solutions Engineer homework. Problem Description: [Using any language or framework along with the LaunchDarkly SDK, implement a feature flag.] 
+
+First Homework problem for Launch Darkly Solutions Engineer homework.
+Problem Description: Using any language or framework along with the LaunchDarkly SDK, implement a feature flag.
+
+## Project Overview
+
+Inspired by OpenAI's text prediction model GPT-2 this site aims to demonstrate the capabilities via an endless stream of computer generated predictive text, in the form of a story. Each page refresh begins with a phrase determined by the Launch Darkly flag `start-text` which is passed to via fetch request to https://transformer.huggingface.co/autocomplete/gpt2/arxiv-nlp which in turn runs the the Machine Learning Model and returns its prediction for the next word. The combined text is then used for the next iteration.
+
+NOTE: Currently only works with google Chrome and at times crashes due to CORS errors. Not suitable for production.
+
+### Client:
+
+**Overview**
+The client consists of an index.html where bundle.js (built from main.js using browserify) renders the story onto via the request. The story is continuously updated at a configured time interval, until the configured repeat limit is reached. Two Launch Darkly feature flags are used as described below.
+**Code**
+_main.js_ initializes by waiting for the dom to load and Launch Darkly to return a status of ready. Immediately the Launch Darkly flag `model-off` is checked as a way for real time toggling of the app into "offline mode" in case of a broken api etc. Additionally the starting text is determined by the Launch Darkly variable `start-text` allowing for testing of which phrases to begin the story with. `main()` control's the refresh rate and limit to the apps story length, managing the calls to `play()` which gets the next set of text from `getNextText()` consequently updating the page with it.
+
+Note: LaunchDarkly is passed the unique ID of the page visitor which either exists or is created as the variable `UserId` in localStorage.
+
+**Develop**
+Build: `browserify main.js -o bundle.js`
