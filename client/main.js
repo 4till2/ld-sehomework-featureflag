@@ -134,7 +134,7 @@ window.addEventListener("DOMContentLoaded", () => {
             writeTextToPage("We're sorry but it appears our story tellers are tired. Check back in with us soon!");
         } else {
             writeTextToPage(startText)
-            main(1000, 5000);
+            main(1000, 3500);
         }
     });
 })
