@@ -81,7 +81,7 @@ function getTextOnPage() {
     return $(TEXTCONTAINER).text() || '';
 }
 
-// Cleans text as to not break flow, and ML Model
+// Cleans text before writing as to not break flow, and ML Model
 function writeTextToPage(text) {
     $(`<span>${text.replace(/(?:\r\n|\r|\n)/g, '')}</span>`)
         .appendTo(TEXTCONTAINER)
@@ -100,7 +100,7 @@ function play() {
         })
 }
 
-// Parameters allow for eventual customization of variables 
+// Parameters allow for eventual customization of repeatLimit and intervalLimit variables 
 function main(repeatLimit, intervalLimit) {
     let isPaused = false;
 
