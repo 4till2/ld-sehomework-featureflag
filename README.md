@@ -1,13 +1,12 @@
 # ld-sehomework-featureflag
 https://whatastory.surge.sh/
+NOTE: Currently compatible with Google Chrome and at times crashes due to CORS errors with external requests. Suitable for demonstration purposes only.
 
 A small project to demonstrate the usage of using the LaunchDarkly SDK, to implement a feature flag.
 
 ## Project Overview
 
 Inspired by OpenAI's text prediction model GPT-2, this site aims to demonstrate the capabilities via an endless stream of computer generated predictive text in the form of a story. Each page refresh loads the page with a phrase determined by the LaunchDarkly flag `start-text`, then passed via a fetch request to https://transformer.huggingface.co, which in turn runs the Machine Learning Model and returns its prediction for the next set of words. The combined text is then used for the next iteration.
-
-NOTE: Currently works best with Google Chrome and at times crashes due to CORS errors with external requests. Suitable for demonstration purposes only.
 
 ## Client
 
