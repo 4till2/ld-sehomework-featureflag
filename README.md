@@ -1,8 +1,10 @@
 # ld-sehomework-featureflag
+A small project to demonstrate the usage of using the LaunchDarkly SDK, to implement a feature flag.
+
 https://whatastory.surge.sh/
+
 NOTE: Currently compatible with Google Chrome and at times crashes due to CORS errors with external requests. Suitable for demonstration purposes only.
 
-A small project to demonstrate the usage of using the LaunchDarkly SDK, to implement a feature flag.
 
 ## Project Overview
 
